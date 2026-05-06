@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* =========================================
+     LIGHT THEME (Clean, Professional Fintech)
+     ========================================= */
+  :root {
+    --background: 222 47% 4%;     /* #050A14 - Very deep night blue */
+    --foreground: 0 0% 98%;       /* #FAFAFA */
+
+    --card: 222 47% 7%;           /* #091020 - Slightly lighter card */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 165 100% 41%;      /* #00D09C */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%; /* #1E293B */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%; /* #7F1D1D */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217.2 32.6% 17.5%;  /* #1E293B */
+    --input: 217.2 32.6% 17.5%;
+    --ring: 165 100% 41%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary transition-colors duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* 
+  GLASS PANELS: 
+  Clean, subtle transparency with a slight border. 
+  No overly complex or messy gradients.
+*/
+.glass-panel {
+  @apply bg-card/90 dark:bg-card/80 backdrop-blur-md border border-border shadow-sm dark:shadow-2xl transition-colors duration-300;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black/10 dark:bg-white/10 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-black/20 dark:bg-white/20;
+}
